@@ -52,9 +52,13 @@ def load_fas_contexts():
 FAS_CONTEXTS = load_fas_contexts()
 
 
-# Pydantic model for request
+# Pydantic models
 class QueryRequest(BaseModel):
     contract_type: str
+    query: str
+
+
+class DetectRequest(BaseModel):
     query: str
 
 
@@ -80,12 +84,11 @@ Question:
 {query}
 
 Your task:
-1. Identify the applicable rules/articles from the FAS.
+1. Make sure to read all the FAS document and identify the applicable rules/articles for the query.
 2. Apply them to the values provided, doing all required calculations step-by-step.
 3. Show journal entries where applicable.
 4. Explain why each step is done based on the standard.
 
-Respond with a structured answer including: ✅ Rule Reference → 🧮 Calculation → 📘 Journal Entry.
 Only use information from the FAS context, and clearly show your math steps.
 """
     response = client.chat.completions.create(
@@ -94,6 +97,39 @@ Only use information from the FAS context, and clearly show your math steps.
         temperature=0.2,
     )
     return {"response": response.choices[0].message.content.strip()}
+
+
+# 🤖 Contract Type Detection and Delegation
+@app.post("/detect-contract-type")
+def detect_and_delegate(request: DetectRequest):
+    query = request.query
+
+    detection_prompt = f"""
+You are an AI trained on AAOIFI Financial Accounting Standards. The following are contract types:
+- Musharaka
+- Murabaha
+- Istisna
+- Salam
+- Ijara
+
+Given the user query below, return only the most relevant contract type from the list above (in lowercase). Do not explain.
+
+Query: {query}
+"""
+    detection_response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": detection_prompt}],
+        temperature=0,
+    )
+    detected_type = detection_response.choices[0].message.content.strip().lower()
+
+    if detected_type not in FAS_CONTEXTS:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Could not classify query into a valid contract type. Got: {detected_type}",
+        )
+
+    return fas_agent_endpoint(QueryRequest(contract_type=detected_type, query=query))
 
 
 # 🧪 Local testing (optional)
