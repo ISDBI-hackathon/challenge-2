@@ -1,0 +1,43 @@
+{
+    "standard": "FAS4",
+    "transaction_type": "Musharaka Financing",
+    "scope": {
+      "applies_to": [
+        "Constant Musharaka (short/long-term)",
+        "Diminishing Musharaka (ownership transfer)",
+        "Islamic bank's share in Musharaka capital (own funds, commingled funds, restricted accounts)"
+      ],
+      "exclusions": [
+        "Mudaraba",
+        "Participations",
+        "Zakah on Musharaka funds",
+        "Accounting in partner's/client's books"
+      ]
+    },
+    "accounting_treatments": {
+      "recognition_at_contracting": {
+        "cash_contribution": "Measured at paid/made available amount (Para 4)",
+        "in_kind_contribution": "Measured at fair value (agreed between partners); profit/loss recognized if book vs. fair value differs (Para 5)",
+        "expenses": "Not part of capital unless mutually agreed (Para 6)"
+      },
+      "measurement_post_contracting": {
+        "constant_musharaka": "Historical cost (Para 7)",
+        "diminishing_musharaka": "Historical cost after deducting transferred shares; profit/loss recognized on sale (Para 8-9)"
+      },
+      "profit_loss_recognition": {
+        "short_term": "Recognized at liquidation (Para 11)",
+        "long_term": "Recognized proportionally as profits are distributed/losses deducted (Para 12-13)",
+        "unpaid_profits": "Treated as receivables (Para 14-16)"
+      }
+    },
+    "disclosure_requirements": [
+      "Provision for capital loss (Para 17)",
+      "Compliance with FAS1 disclosure standards (Para 18)"
+    ],
+    "effective_date": "1 Muharram 1418 AH / 1 January 1998 AD (Para 19)",
+    "appendices": [
+      "Juristic rules (partnership types, profit/loss allocation, termination)",
+      "Reasons for standard (need for uniformity, comparability)",
+      "Definitions (Constant/Diminishing Musharaka, Mudaraba)"
+    ]
+  }

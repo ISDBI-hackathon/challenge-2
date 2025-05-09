@@ -1,0 +1,51 @@
+{
+    "contractType": "Ijarah",
+    "contractReference": "IJ-2023-001",
+    "shariahCompliance": {
+      "supervisedBy": "ABC Islamic Bank Shari’ah Board",
+      "fatwaReference": "FATWA/IJ/2023/05"
+    },
+    "asset": {
+      "description": "Halal-certified Delivery Van",
+      "identification": "Toyota HiAce 2023, Chassis No. JT123456789",
+      "usufructTerms": {
+        "duration": "36 months",
+        "usageTerms": "Unlimited mileage (for halal logistics use only)",
+        "ownershipClause": "Ownership remains with Lessor (ABC Islamic Bank); Lessee has right to use only."
+      }
+    },
+    "consideration": {
+      "totalAmount": 60000,
+      "currency": "MYR (Malaysian Ringgit)",
+      "paymentSchedule": ["Monthly", 1666.67],
+      "profitRate": "5% per annum (fixed, no riba)",
+      "components": [
+        {
+          "type": "Ijarah",
+          "description": "Usufruct of Halal Delivery Van",
+          "standAlonePrice": 54000,
+          "allocatedAmount": 54000,
+          "islamicBasis": "Based on AAOIFI Standard No. 9 (Ijarah)"
+        },
+        {
+          "type": "Non-Ijarah",
+          "description": "Takaful (Islamic Insurance) Coverage",
+          "standAlonePrice": 6000,
+          "allocatedAmount": 6000,
+          "islamicBasis": "Separate contract compliant with Takaful rules"
+        }
+      ],
+      "simplifiedApproach": false,
+      "latePaymentTerms": "Penalty (if any) must be donated to charity (no benefit to Lessor)."
+    },
+    "parties": {
+      "lessor": "ABC Islamic Bank",
+      "lessee": "Al-Barakah Logistics Sdn Bhd",
+      "witness": "Islamic Contract Auditor (Mufti approved)"
+    },
+    "reassessmentClause": "Reassessment required if: (1) Asset is damaged, (2) Lease term is modified, or (3) Payment structure changes.",
+    "endOfTermOptions": [
+      "Return asset to Lessor",
+      "Purchase via separate Islamic sale (e.g., Murabaha) at fair market value"
+    ]
+  }

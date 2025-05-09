@@ -1,0 +1,42 @@
+{
+  "Salam_Financing": {
+    "Scope": "Accounting rules for Salam financing transactions, including capital payment, receipt/sale of Al-Muslam Fihi, and related revenues/expenses.",
+    "Recognition": {
+      "Trigger": "When capital (Ra’s Al-Mal) is paid or made available to Al-Muslam Ileihi.",
+      "Initial_Measurement": {
+        "Cash": "Amount paid.",
+        "Kind/Benefit": "Fair value agreed between parties."
+      }
+    },
+    "Subsequent_Measurement": {
+      "At_Period_End": "Historical cost, with provisions for probable deficits in delivery or value decline.",
+      "Presentation": "Under 'Salam Financing' in financial statements."
+    },
+    "Delivery_Failure": {
+      "Partial/Complete": {
+        "Extended_Delivery": "Book value remains unchanged.",
+        "Contract_Cancellation": "Receivable recognized if capital not repaid."
+      },
+      "Misconduct/Negligence": "Receivable due from client; securities pledged may offset losses."
+    },
+    "Substitution": {
+      "Goods_Replacement": "Market/fair value comparison; loss recognized if substitute value is lower."
+    },
+    "Disclosure": "Adhere to FAS1 (General Presentation and Disclosure).",
+    "Effective_Date": "1 Muharram 1419 AH (1 January 1999 AD)."
+  },
+  "Parallel_Salam": {
+    "Scope": "Accounting rules for Parallel Salam transactions, including capital receipt and delivery obligations.",
+    "Recognition": {
+      "Trigger": "When Islamic bank receives Salam capital (cash, kind, or benefit).",
+      "Initial_Measurement": "Fair value agreed between parties."
+    },
+    "Subsequent_Measurement": {
+      "At_Period_End": "Presented as a liability under 'Parallel Salam' in financial statements."
+    },
+    "Delivery_Obligation": {
+      "Result_Recognition": "Profit/loss recognized upon delivery based on cost vs. client payment difference."
+    },
+    "Disclosure": "Adhere to FAS1 (General Presentation and Disclosure)."
+  }
+}

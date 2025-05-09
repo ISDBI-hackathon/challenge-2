@@ -1,0 +1,44 @@
+{
+    "Murabaha": {
+      "Scope": "Accounting for Murabaha transactions (excluding Tawarruq and commodity Murabaha).",
+      "Recognition": {
+        "Inventory": "Recognized when control is obtained; measured at cost (including taxes, transportation).",
+        "Receivables": "Recognized at face value upon contract consummation."
+      },
+      "Subsequent_Measurement": {
+        "Inventory": "Lower of cost or net realizable value (NRV); exceptions for binding purchase promises.",
+        "Receivables": "Gross amount less allowance for credit losses."
+      },
+      "Profit_Recognition": {
+        "Deferred_Profit": "Amortized over credit period using effective profit rate (long-term) or straight-line (short-term).",
+        "Waivers/Discounts": "Offset against deferred profit first, then recognized as expense."
+      },
+      "Fees_and_Deposits": {
+        "Hamish_Jiddiyyah": "Recorded as liability (security deposit).",
+        "Urboun": "Netted against receivables post-transaction."
+      },
+      "Disclosure": {
+        "Required_Info": "Accounting policies, inventory classification, receivables maturity, deferred profit movement."
+      },
+      "Effective_Date": "1 January 2019."
+    },
+    "Deferred_Payment_Sales": {
+      "Scope": "Sales with deferred payment (excluding Murabaha-specific disclosures).",
+      "Recognition": {
+        "Inventory": "Same as Murabaha; measured at cost.",
+        "Receivables": "Same as Murabaha; recognized at face value."
+      },
+      "Subsequent_Measurement": {
+        "Inventory": "Lower of cost or NRV.",
+        "Receivables": "Gross amount less allowance for credit losses."
+      },
+      "Profit_Recognition": {
+        "Deferred_Profit": "Amortized similarly to Murabaha."
+      },
+      "Buyer_Accounting": {
+        "Asset_Recognition": "Recorded at invoice value (including profit) plus incidental costs.",
+        "Liabilities": "Accounts payable at face value."
+      },
+      "Disclosure": "Same as Murabaha, excluding profit markup details."
+    }
+  }
