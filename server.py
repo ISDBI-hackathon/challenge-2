@@ -2,7 +2,7 @@ import os
 import json
 from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
-import openai
+from openai import OpenAI
 import PyPDF2
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # 🔑 Initialize OpenAI client
-openai.api_key = "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"
+client = OpenAI(api_key="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")
 
 app = FastAPI()
 
@@ -129,7 +129,7 @@ Your task:
 
 Only use information from the FAS context, and clearly show your math steps.
 """
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4.1",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.2,
@@ -179,7 +179,7 @@ Return your analysis in the following format:
 Sort the results by confidence score in descending order. Make sure to return valid JSON.
 The sum of all confidence scores should be 100.
 """
-        detection_response = openai.ChatCompletion.create(
+        detection_response = client.chat.completions.create(
             model="gpt-4.1",
             messages=[{"role": "user", "content": detection_prompt}],
             temperature=0,
@@ -239,4 +239,4 @@ The sum of all confidence scores should be 100.
 
 # 🧪 Local testing (optional)
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8001)
